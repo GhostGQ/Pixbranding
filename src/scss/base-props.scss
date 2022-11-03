@@ -1,0 +1,36 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Montserrat;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+.container {
+  width: $container-lg;
+  margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+  background: $scroll-bar;
+  width: 0.7rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: darken($scroll-bar-thumb, 10%);
+
+  border-radius: 1rem;
+}

@@ -1,0 +1,135 @@
+nav {
+  padding: 1.4rem 0;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__list {
+  display: flex;
+  gap: 3rem;
+
+  a i {
+    display: none;
+  }
+} 
+
+.nav__list-item {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.nav__list-item:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  margin-top: 0.3rem;
+  background: $bg-color-green;
+
+  opacity: 0;
+  transition: $transition;
+}
+
+.nav__list-item:hover:after {
+  opacity: 1;
+}
+
+.open-btn, .close-menu {
+  display: none ;
+}
+
+
+// Media queries for tablets \\
+@media screen and (max-width: 1224px) {
+  .container {
+    width: $container-md;
+  }
+}
+
+
+// Media queries for phones \\
+@media screen and (max-width: 835px) {
+  .container {
+    width: $container-sm;
+  }
+
+  .logo img {
+    width: 8rem;
+  }
+
+  .open-btn {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2rem 1.5rem 0 0;
+    font-size: 2rem;
+  }
+
+  .close-menu {
+    display: block;
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    margin: 1rem 0.5rem 0 0;
+  }
+
+  .nav__menu {
+    display: block;
+    z-index: 9999;
+    position: fixed;
+    width: 100%;
+    height: fit-content;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: $transition;
+
+    background: lighten($bg-color-black, 3%);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+
+    transform: translateY(-200px);
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &.active .open-btn {
+      display: none;
+    }
+  }
+
+  .nav__list {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 3rem 0 1.5rem 2rem;
+
+    a {
+      font-weight: 500;
+
+      i {
+        display: inline-block;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .nav__list-item {
+    display: inline-block;
+    width: fit-content;
+
+    &::after {
+      display: none;
+    }
+  }
+  
+}
